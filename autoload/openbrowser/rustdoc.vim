@@ -10,6 +10,21 @@ function! openbrowser#rustdoc#load() abort
   " dummy function to load this script.
 endfunction
 
+function! openbrowser#rustdoc#crate(args) abort
+    " TODO: custom docs instance with args
+    let crate = get(a:args, 0)
+    if empty(crate)
+        call s:error('crate name must be provided')
+        return
+    endif
+    let cargo_version = get(a:args, 1, 'latest')
+    return openbrowser#open('https://docs.rs/'.. crate .. '/' .. cargo_version .. '/' .. crate)
+endfunction
+
+function! openbrowser#rustdoc#std() abort
+    return openbrowser#open('https://doc.rust-lang.org/std/')
+endfunction
+
 function! openbrowser#rustdoc#file(args) abort
     let file = s:resolve(expand(get(a:args, 0, '%')))
     echo 'file:' . file
@@ -29,8 +44,27 @@ function! s:getstdurl(rustFilePath)
   return 'https://doc.rust-lang.org/' .. stdPart
 endfunction
 
+" Helpers
+
 function! s:resolve(path) abort
   return exists('*resolve') ? resolve(a:path) : a:path
+endfunction
+
+function! s:echomsg(msg, hl) abort
+  execute 'echohl' a:hl
+  try
+    echomsg '[openbrowser-rustdoc]' a:msg
+  finally
+    echohl None
+  endtry
+endfunction
+
+function! s:warn(msg) abort
+  call s:echomsg(a:msg, 'WarningMsg')
+endfunction
+
+function! s:error(msg) abort
+  call s:echomsg(a:msg, 'ErrorMsg')
 endfunction
 
 

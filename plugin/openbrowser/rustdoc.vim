@@ -32,6 +32,13 @@ command! -range=0 -bar -nargs=*
 \ OpenRustDoc
 \ call openbrowser#rustdoc#file([<f-args>])
 
+command! -range=0 -bar -nargs=*
+\ OpenRustDocCrate
+\ call openbrowser#rustdoc#crate([<f-args>])
+
+command! -range=0 -bar -nargs=0
+\ OpenRustDocStd
+\ call openbrowser#rustdoc#std()
 
 
 " Restore 'cpoptions' {{{
