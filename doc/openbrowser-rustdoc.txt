@@ -1,0 +1,89 @@
+*openbrowser-rustdoc* Launch Rustdoc quickly from Vim
+
+Author:
+  rogercoll <rogercoll@protonmail.com>
+Version: 0.0.1
+License: See LICENSE file in this repository
+
+==============================================================================
+CONTENTS				*openbrowser-rustdoc-contents*
+
+Introduction		|openbrowser-rustdoc-introduction|
+Requirements		|openbrowser-rustdoc-requirements|
+Interface			|openbrowser-rustdoc-interface|
+  Commands			|openbrowser-rustdoc-commands|
+TODO				|openbrowser-rustdoc-todo|
+Changelog			|openbrowser-rustdoc-changelog|
+
+==============================================================================
+INTRODUCTION			*openbrowser-rustdoc-introduction*
+
+Opens Rustdoc URL for current crate, standard library, etc. from Vim.
+
+See |openbrowser-rustdoc-commands| for the details of available commands.
+
+==============================================================================
+REQUIREMENTS			*openbrowser-rustdoc-requirements*
+
+You must install the following plugin/libraries.
+
+* open-browser.vim
+  https://rustdoc.com/tyru/open-browser.vim
+
+==============================================================================
+INTERFACE				*openbrowser-rustdoc-interface*
+------------------------------------------------------------------------------
+COMMANDS				*openbrowser-rustdoc-commands*
+
+:OpenRustDoc [{path}]					*:OpenRustDoc*
+------------------------
+
+Opens the underlying Rust module in docs.rs.
+
+Tracking issue: https://github.com/rogercoll/open-browser-rustdoc.vim/issues/1
+>
+	" Opens current module files public documentation
+	:OpenRustDoc
+
+	" Opens a specific file crate documentation
+	:OpenRustDoc PATH/TO/FILE
+<
+
+							*:OpenRustDocCrate*
+:OpenRustDocCrate {crate}
+:OpenRustDocCrate {crate} {version}
+-----------------------------------
+
+Opens a specific crate public documentation.
+>
+	" Opens anyhow's crate documentation
+	:OpenRustDocCrate anyhow
+
+	" Opens anyhow's version 1.0.0 crate documentation
+	:OpenRustDocCrate anyhow 1.0.0
+<
+
+							*:OpenRustDocStd*
+:OpenRustDocStd
+-------------------------------------
+
+Opens Rust standard library in doc.rust-lang.org/std.
+>
+	" Opens doc.rust-lang.org/std
+	:OpenRustDocStd
+<
+
+==============================================================================
+TODO					*openbrowser-rustdoc-todo* 
+
+Any requests? ;)
+
+https://github.com/rogercoll/open-browser-rustdoc.vim/issues
+
+==============================================================================
+CHANGELOG				*openbrowser-rustdoc-changelog* 
+
+0.0.1:
+- Initial upload
+
+==============================================================================
