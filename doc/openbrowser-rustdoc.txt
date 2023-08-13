@@ -73,6 +73,16 @@ Opens Rust standard library in doc.rust-lang.org/std.
 	:OpenRustDocStd
 <
 
+							*:OpenRustDocReleases*
+:OpenRustDocReleases
+-------------------------------------
+
+Opens Rust Releases documentation page.
+>
+	" Opens https://releases.rs/docs/
+	:OpenRustDocReleases
+<
+
 ==============================================================================
 TODO					*openbrowser-rustdoc-todo* 
 

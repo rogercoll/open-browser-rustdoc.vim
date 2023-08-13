@@ -34,6 +34,14 @@ Opens Rust standard library in doc.rust-lang.org/std/.
 :OpenRustDocStd
 ```
 
+### `:OpenRustDocReleases`
+
+Opens https://releases.rs/docs/.
+
+```vimL
+:OpenRustDocReleases
+```
+
 ## WIP
 
 ### `:OpenRustDoc`

@@ -40,6 +40,9 @@ command! -range=0 -bar -nargs=0
 \ OpenRustDocStd
 \ call openbrowser#rustdoc#std()
 
+command! -range=0 -bar -nargs=0
+\ OpenRustReleases
+\ call openbrowser#rustdoc#releases()
 
 " Restore 'cpoptions' {{{
 let &cpo = s:save_cpo

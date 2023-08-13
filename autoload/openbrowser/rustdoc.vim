@@ -25,6 +25,10 @@ function! openbrowser#rustdoc#std() abort
     return openbrowser#open('https://doc.rust-lang.org/std/')
 endfunction
 
+function! openbrowser#rustdoc#releases() abort
+    return openbrowser#open('https://releases.rs/docs/')
+endfunction
+
 function! openbrowser#rustdoc#file(args) abort
     let file = s:resolve(expand(get(a:args, 0, '%')))
     echo 'file:' . file
