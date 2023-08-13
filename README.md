@@ -10,6 +10,23 @@ This plugin requires:
 
 * [open-browser.vim](https://github.com/tyru/open-browser.vim)
 
+Use your favorite plugin manager to install this plugin and all its lua dependencies.
+
+<details>
+<summary>Expand lazy.nvim snippet: </summary>
+
+```lua
+{
+    "rogercoll/open-browser-rustdoc.vim",
+    dependencies = {
+        "tyru/open-browser.vim", -- Required
+    },
+    lazy = false,
+}
+```
+
+</details>
+
 
 ## Usage
 
